@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform player;
+    public int velocity;
+    public Transform scenario;
 
-    // Update is called once per frame
-    void Update()
+    private void Update ()
     {
-        
+        scenario.position = Vector3.MoveTowards (scenario.position, scenario.position + Vector3.left, Time.deltaTime * velocity);
     }
 }
